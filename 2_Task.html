@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Задание 2</title>
+</head>
+<body>
+    <div class="elem">
+      <img src="photo.png" alt="photo" />
+      <div class="content">
+        <h2 class="heading">Lorem, ipsum dolor.</h2>
+          <p class="text">Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Recusandae, ea!</p>
+      </div>
+    </div>
+
+    <script>
+        // 1. Найти параграф с классом text с помощью querySelector
+        const paragraph = document.querySelector('.text');
+        // Вывести его в консоль
+        console.log('Параграф с классом text:', paragraph);
+
+        // 2. Вывести в консоль соседний элемент h2
+        // Для этого сначала получим родителя параграф
+        // и найдем внутри него h2
+        const heading = paragraph.parentElement.querySelector('h2');
+        console.log('Соседний h2:', heading);
+
+        // 3. Вывести в консоль родительский элемент content
+        const contentDiv = paragraph.parentElement;
+        console.log('Родительский элемент content:', contentDiv);
+
+        // 4. Вывести в консоль картинку
+        const image = document.querySelector('img');
+        console.log('Картинка:', image);
+
+        // 5. Вывести в консоль родительский элемент elem
+        const elemDiv = image.closest('.elem');
+        console.log('Родительский элемент elem:', elemDiv);
+    </script>
+</body>
+</html>
