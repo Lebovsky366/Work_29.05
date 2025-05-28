@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Задание 3</title>
+</head>
+<body>
+    <div class="item">
+        <div class="elem">
+          <div class="info">
+          <h2 class="subtitle">Lorem, ipsum dolor.</h2>
+          </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. Найти элемент <h2> с помощью querySelector
+        const h2Element = document.querySelector('h2');
+
+        // 2. Создать массив для хранения всех родителей
+        const parents = [];
+
+        // 3. Цикл для получения всех родителей элемента
+        let currentElement = h2Element;
+        while (currentElement.parentElement) {
+            currentElement = currentElement.parentElement; // переходим к следующему родителю
+            parents.push(currentElement); // добавляем текущего родителя в массив
+        }
+
+        // 4. Выводим все родители в консоль
+        console.log('Все родители элемента <h2>:');
+        parents.forEach((parent, index) => {
+            console.log(`Родитель ${index + 1}:`, parent);
+        });
+    </script>
+</body>
+</html>
