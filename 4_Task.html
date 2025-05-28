@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Задача 4</title>
+<style>
+
+  input {
+    border: 2px solid black;
+    padding: 5px;
+  }
+
+  .error {
+    border-color: red;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<form id="myForm" action="#">
+  <input type="text" id="myInput" />
+  <button type="submit">Отправить</button>
+</form>
+
+<div id="message"></div>
+
+<script>
+  // Находим форму, поле и блок для сообщения
+  const form = document.getElementById('myForm');
+  const input = document.getElementById('myInput');
+  const messageDiv = document.getElementById('message');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // чтобы страница не перезагружалась при отправке формы
+
+  // Если сообщение уже есть, удаляем его
+  messageDiv.innerHTML = '';
+
+  // Убираем красную рамку, если была
+  input.classList.remove('error');
+
+  // Проверяем, пустое ли поле
+  if (input.value.trim() === '') {
+    // Если пустое:
+
+    // делаем рамку красной
+    input.classList.add('error');
+
+    // создаем сообщение
+    const errorMsg = document.createElement('h2');
+    errorMsg.textContent = 'вы не заполнили поле ввода';
+
+    // добавляем сообщение в блок message
+    messageDiv.appendChild(errorMsg);
+  } else {
+    // Если поле заполнено
+    alert('Вы успешно отправили форму!');
+  }
+});
+</script>
+
+</body>
+</html>
