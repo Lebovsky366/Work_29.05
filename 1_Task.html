@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 1</title>
+    <style>
+        /* В этом разделе мы можем определить стили для класса item,
+           чтобы применить их к создаваемому элементу. */
+        .item {
+            /* Цвет текста синий */
+            color: blue;
+            /* Сплошная черная рамка толщиной 1px */
+            border: 1px solid black;
+            /* Цвет фона #f8f8f8 */
+            background-color: #f8f8f8;
+            /* Внутренний отступ 16px со всех сторон */
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Создаем основной блок с классом block -->
+    <div class="block" id="myBlock">
+        <!-- Этот блок будет содержать наш созданный элемент -->
+    </div>
+
+    <script>
+        // Создаем элемент div и сохраняем его в переменную itemDiv
+        var itemDiv = document.createElement('div');
+
+        // Устанавливаем класс этого элемента 'item'
+        itemDiv.className = 'item';
+
+        // Добавляем текст внутри этого элемента
+        itemDiv.textContent = 'Элемент внутри';
+
+        // Находим наш основной блок по id для дальнейшей работы
+        var block = document.getElementById('myBlock');
+
+        // Вставляем созданный элемент внутрь блока
+        block.appendChild(itemDiv);
+
+        // Теперь добавим блоку класс 'item_1' с помощью setAttribute
+        block.setAttribute('class', 'block item_1');
+    </script>
+</body>
+</html>
