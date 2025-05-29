@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Homework 5</title>
+</head>
+<body>
+<p class="dropdown">Привет :)</p>
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button"
+          id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+<script>
+"use strict";
+
+// Задача 1
+// Используем querySelectorAll для поиска всех элементов с классом "dropdown-item"
+// Затем перебираем их методом forEach и добавляем класс classList.add
+
+document.querySelectorAll('.dropdown-item').forEach(function(item) {
+    item.classList.add('super-dropdown');
+});
+// Теперь все <a class="dropdown-item"> имеют еще класс "super-dropdown"
+
+
+// Задача 2
+// Находим первый элемент с классом "btn" (у нас есть только один такой)
+const btn = document.querySelector('.btn');
+
+if (btn.classList.contains('btn-secondary')) {
+    // Если класс есть, удаляем его
+    btn.classList.remove('btn-secondary');
+} else {
+    // Если класса нет, добавляем его
+    btn.classList.add('btn-secondary');
+}
+
+// Задача 3
+// Находим элемент с классом "menu"
+const menuElement = document.querySelector('.menu');
+
+if (menuElement) {
+    // Удаляем класс "dropdown-menu"
+    menuElement.classList.remove('dropdown-menu');
+}
+// Теперь элемент с классом "menu" не будет иметь класс "dropdown-menu"
+
+
+// Задача 4
+// Используем insertAdjacentHTML('afterend', ...)
+// Находим div с классом "dropdown"
+const dropdownDiv = document.querySelector('.dropdown');
+
+if (dropdownDiv) {
+    dropdownDiv.insertAdjacentHTML('afterend', '<a href="#">link</a>');
+}
+// После этого div.dropdown появится ссылка <a> сразу после него
+
+
+// Задача 5
+// Находим элемент по id и меняем его атрибут id
+const dropdownBtn = document.getElementById('dropdownMenuButton');
+
+if (dropdownBtn) {
+    dropdownBtn.id = 'superDropdown';
+}
+// Теперь кнопка имеет id "superDropdown"
+
+
+// Задача 6
+// Ищем элемент с атрибутом aria-labelledby="dropdownMenuButton"
+const labelledElement = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+
+if (labelledElement) {
+    // Используем dataset для добавления data-dd
+    labelledElement.dataset.dd = '3';
+}
+// Теперь у элемента есть атрибут data-dd="3"
+
+
+// Задача 7
+// Находим элемент с классом "dropdown-toggle"
+const dropdownToggle = document.querySelector('.dropdown-toggle');
+
+if (dropdownToggle) {
+    dropdownToggle.removeAttribute('type');
+}
+// Теперь у кнопки с классом "dropdown-toggle" атрибут type удален
+
+</script>
+</body>
+</html>
